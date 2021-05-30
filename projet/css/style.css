@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;800&display=swap');
+/* POUR IMPORTER POLICE TELECHARGEE
+@font-face {
+    font-family: 'RalewayRegular';
+    src: url('/fonts/RalewayRegular/raleway.woff2') format('woff2'),
+         url('/fonts/RalewayRegular/raleway.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+/* MISE EN FORME GENERALE */ /*#region*/
+
+*{ /* prend toute la page */
+    font-family: 'Raleway';
+}
+
+#main_wrapper /* fixer dimensions de la page et centre le site à l'écran */
+{
+    margin: 20px 30px 0px 30px;
+}
+
+h1 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.h1principal {
+    line-height: 20px;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+/* pictogrammes */
+.blueColor{
+    color:#0065FC;
+}
+.grayColor{
+    color: gray;
+}
+/*#endregion*/
+
+/* HEADER */ /*#region*/
+header /* tout aligner */
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo img /* Rapetissir le logo */
+{
+    max-width:23%;
+	height: auto;
+    margin-top: 25px;
+}
+/*#endregion*/
+
+/* MENU DE NAVIGATION */ /*#region*/
+
+.navstart ul /* enlever les puces, et mettre au format flexbox */
+{    
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5px;
+}
+
+li  /* ajouter espaces dans la liste */
+{ 
+    margin-left: 60px;
+}
+
+.navstart__item a/* enlever le sous-lignement du menu */
+{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    font-size: small;
+}
+
+.navstart__item a:active /* met en bleu de lien actif et ajout bordure */
+{
+    color: #0065FC;
+    border-top: 2px solid #0065FC;
+}
+
+.navstart__item a:hover /* agit sur le lien survolé */
+{
+    font-weight: 600;
+    border-top: 2px solid #0065FC;
+    padding-top: 30px;
+    color: #0065FC;
+}
+
+.navstart__item--inscription a/* "s'inscrire" soit tjrs en gras et bleu */
+{
+    color: #0065FC;
+    font-weight: 800;
+}
+/*#endregion*/
+
+/* FORMULAIRE DE RECHERCHE DE LOCALISATION */ /*#region*/
+
+#research
+{
+    display: flex;
+    justify-content: flex-start; /* NSP */
+    flex-wrap: nowrap; /* NSP */
+    align-items: stretch; /* NSP */
+    height: 45px;
+}
+
+::placeholder  /* format de la barre du formulaire */
+{
+    color: lightgrey;
+}
+
+input[type=research] /* format de la barre de recherche */
+{
+    border: 1px solid #F2F2F2;
+    height: 100%;
+    box-sizing: border-box; /* permet de rentrer la marge ds le calcul des dimensions */
+    text-indent: 15px; /* faire faire commencer le curseur plus loin */
+    width: 230px;
+    font-weight: 600;
+    font-size: initial
+}
+
+input[type=submit] /* format du bouton "rechercher" */
+{
+    border-radius: 0px 10px 10px 0px; /* bordure arrondie à droite */
+    border: none;
+    background-color: #0065FC;
+    color: white;
+    height: 100%; /* prend toute la place possible */
+    margin-left: -7px; /* vient au dessus de la barre de recherche */
+    padding-inline: 18px; 
+    font-weight: 600;
+    font-size: initial
+}
+
+.markermap /*pictogramme */
+{
+    max-width:0.8em; /* rapetissir le pictogramme */
+    border-radius: 10px 0px 0px 10px; /* bords gauche arrondis */
+    background-color: #F2F2F2;
+    padding-inline: 18px; /* rajouter bordures internes D&G */
+} 
+/*#endregion*/
+
+/* FILTERS */ /*#region*/
+
+#filters
+{
+    display: flex;
+    justify-content: space-between;
+    padding-inline-end: 50px;
+    flex-wrap: wrap;
+    align-items:center;
+    width: 950px;
+    font-weight: 600;
+}
+
+.filters__picto
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 40px; /*arrondir le picto */
+    background-color: #DEEBFF;
+    padding: 15px;
+    position: relative; /* picto en avant */
+}
+
+#filters p
+{
+    border: 2px solid lightgrey;
+    height: 100%;
+    align-content: center;
+    text-indent: 60px;
+    padding-block: 14px;
+    margin-left: -75px;
+    padding-inline-end: 30px;
+    border-radius: 30px;
+}
+
+.info
+{
+    position: relative;
+    display: table;
+    box-sizing: border-box;
+    height: 22px;
+    margin-block: 15px;
+}
+
+.info__picto
+{
+    width: 12px;
+    border-radius: 40px;
+    border: 1px solid grey;
+    padding: 4px;
+    color: #0065FC;
+    text-align: center;
+}
+
+.info__txt
+{
+    padding-left: 15px;
+    display: table-cell;
+    vertical-align: middle;
+}
+/*#endregion*/
+
+/* PARTIE HÉBERGEMENT- caractériques générales */ /*#region*/
+
+.LesHerbergements .Activites
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.gridHebgt, .gridMostPop /* le bloc gris */
+{
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.gridHebgt__title, .gridActivity__title
+{
+    margin-top: 0;
+}
+/*#endregion*/
+
+/* SECTION HÉBERGEMENTS */ /*#region*/
+
+.gridHebgt
+{
+    width: 880px;
+    height: 625px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    margin: 0;
+}
+
+.gridHebgt__title
+{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.hebgt-prev /* une card */
+{
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 5px;
+    width: 245px;
+    height: 200px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    font-size: small;
+    box-shadow: 0px 3px 3px 3px #ebebeb;
+}
+
+.hebgt-prev__img /* l'image d'une card */
+{
+    object-fit: cover; /* ajustement de l'image, rogner si besoin */
+    width: 236px;
+    height: 115px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.hebgt-prev__prez
+{
+    padding-left: 15px;
+}
+
+.hebgt-prev__h3 
+{
+    margin-block: 5px;
+}
+
+.hebgt-prev__star
+{
+    padding-top: 8px;
+}
+
+/*#endregion*/
+
+/* SECTION LES PLUS POPULAIRES */ /*#region*/
+
+.gridMostPop
+{
+    width: 420px;
+    height: 625px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    padding: 40px 40px 34px 40px;
+}
+
+.gridMostPop__title
+{
+    margin: 0px;
+}
+
+.mostpop-prev /* une prev */
+{
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 5px;
+    width: 345px;
+    height: 141px;
+    box-sizing: border-box;
+    font-size: small;
+    box-shadow: 0px 3px 3px 3px #ebebeb;
+}
+
+.mostpop-prev__img /* l'image d'une preview */
+{
+    object-fit: cover; /* ajustement de l'image, rogner si besoin */
+    width: 135px;
+    height: 132px;
+    border-radius: 15px 0px 0px 15px;
+    float: left;
+}
+
+.mostpop-prev__prez
+{
+    padding-left: 155px;
+    max-width: 140px;
+}
+
+.mostpop-prev__h3 
+{
+    margin-block: 5px;
+    width: 100%px;
+}
+
+.fa-chart-line /* picto graph */
+{
+    position: absolute;
+    right: 40px;
+}
+
+.mostpop-prev__star
+{
+    padding-top: 50px;
+}
+
+/*#endregion*/
+
+
+/* SECTION ACTIVITÉS A MARSEILLE */ /*#region*/
+
+.gridActivity
+{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.Activites img /* l'image de toutes les cards */
+{
+    object-fit: cover; /* ajustement de l'image, rogner si besoin */
+    width: 300px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.activity-prev__imgL /* l'image d'une card LARGE */
+{
+    height: 385px;
+}
+
+.activity-prev
+{
+    width: 300px;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 3px 3px 3px #f2f2f2;
+}
+
+.activity-prev__h3
+{
+font-size: medium;
+}
+
+/*#endregion*/
+
+/* FOOTER */ /*#region*/
+footer
+{
+    background-color: #F2F2F2;
+}
+
+.a.propos .nos.hebergements .assistance
+{
+    text-align: left;
+}
+
+.navend 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.navendul
+{
+    list-style-type: none;
+}
+
+
+
+.navend__item a/* enlever le sous-lignement du menu */
+{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+.navend__titles
+{
+    text-align: center;
+}
+
+/*#endregion*/
