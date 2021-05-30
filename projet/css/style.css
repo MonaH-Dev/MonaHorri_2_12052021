@@ -364,27 +364,89 @@ input[type=submit] /* format du bouton "rechercher" */
 
 /*#endregion*/
 
-
 /* SECTION ACTIVITÉS A MARSEILLE */ /*#region*/
 
 .gridActivity
 {
     box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    /* OU gris-template-colums: repeat (3, 300px); */
+    grid-template-rows: 50% 50%;
+    grid-gap: 40px;
     justify-content: space-between;
     position: relative;
+    height: 445px;
 }
 
+.activity-prev
+{
+    width: 300px;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 3px 3px 3px #f2f2f2;
+    position: relative;
+}
 
 .Activites img /* l'image de toutes les cards */
 {
     object-fit: cover; /* ajustement de l'image, rogner si besoin */
     width: 300px;
+    height: 100%;
     border-radius: 15px 15px 0px 0px;
 }
 
-.activity-prev__imgL /* l'image d'une card LARGE */
+.activity-prev__h3
+{
+    margin-top: -60px;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    font-size: medium;
+    padding: 20px;
+    border-radius: 0px 0px 15px 15px;
+    box-sizing: border-box;
+}
+
+.gridActivity article:nth-child(1) 
+{
+    grid-row: 1 / 3;
+}
+
+.gridActivity article:nth-child(2) 
+{
+    grid-row: 1 / 2;
+}
+
+.gridActivity article:nth-child(3) 
+{
+    grid-row: 2 / 3;
+}
+
+.gridActivity article:nth-child(4) 
+{
+    grid-row: 1 / 3;
+}
+
+.gridActivity article:nth-child(5) 
+{
+    grid-row: 1 / 2;
+}
+
+.gridActivity article:nth-child(6) 
+{
+    grid-row: 2 / 3;
+}
+
+
+/*
+.Activites img /* l'image de toutes les cards
+{
+    object-fit: cover; /* ajustement de l'image, rogner si besoin
+    width: 300px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.activity-prev__imgL /* l'image d'une card LARGE 
 {
     height: 385px;
 }
@@ -400,6 +462,9 @@ input[type=submit] /* format du bouton "rechercher" */
 {
 font-size: medium;
 }
+
+*/
+
 
 /*#endregion*/
 
