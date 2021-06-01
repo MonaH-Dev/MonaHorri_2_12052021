@@ -163,7 +163,7 @@ input[type=submit] /* format du bouton "rechercher" */
     justify-content: space-between;
     padding-inline-end: 50px;
     flex-wrap: wrap;
-    align-items:center;
+    align-items: baseline;
     width: 950px;
     font-weight: 600;
 }
@@ -175,7 +175,14 @@ input[type=submit] /* format du bouton "rechercher" */
     border-radius: 40px; /*arrondir le picto */
     background-color: #DEEBFF;
     padding: 15px;
-    position: relative; /* picto en avant */
+    position: absolute; /* picto en avant - enfant */
+    left: 0;
+    top: 16px;
+}
+
+.filter__bloc
+{
+    position: relative; /* parent pour picto */
 }
 
 #filters p
@@ -185,7 +192,6 @@ input[type=submit] /* format du bouton "rechercher" */
     align-content: center;
     text-indent: 60px;
     padding-block: 14px;
-    margin-left: -75px;
     padding-inline-end: 30px;
     border-radius: 30px;
 }
@@ -442,35 +448,6 @@ input[type=submit] /* format du bouton "rechercher" */
 {
     grid-row: 2 / 3;
 }
-
-
-/*
-.Activites img /* l'image de toutes les cards
-{
-    object-fit: cover; /* ajustement de l'image, rogner si besoin
-    width: 300px;
-    border-radius: 15px 15px 0px 0px;
-}
-
-.activity-prev__imgL /* l'image d'une card LARGE 
-{
-    height: 385px;
-}
-
-.activity-prev
-{
-    width: 300px;
-    border-radius: 15px 15px 15px 15px;
-    box-shadow: 0px 3px 3px 3px #f2f2f2;
-}
-
-.activity-prev__h3
-{
-font-size: medium;
-}
-
-*/
-
 
 /*#endregion*/
 
