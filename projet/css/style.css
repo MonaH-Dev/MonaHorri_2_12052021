@@ -379,6 +379,11 @@ input[type=submit] /* format du bouton "rechercher" */
     height: 445px;
 }
 
+.Activites
+{
+    height: 550px;
+}
+
 .activity-prev
 {
     width: 300px;
@@ -472,6 +477,8 @@ font-size: medium;
 footer
 {
     background-color: #F2F2F2;
+    margin-inline: -30px;
+    margin-block-end: -30px;
 }
 
 .a.propos .nos.hebergements .assistance
@@ -483,15 +490,23 @@ footer
 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
+    width: 1000px;
+    padding-block: 25px;
+    padding-left: 30px;
 }
 
 .navendul
 {
     list-style-type: none;
+    padding: 0;
+    text-align: left;
 }
 
-
+.navend__item
+{
+    margin: 15px 0px;
+}
 
 .navend__item a/* enlever le sous-lignement du menu */
 {
@@ -500,9 +515,5 @@ footer
     font-weight: normal;
 }
 
-.navend__titles
-{
-    text-align: center;
-}
 
 /*#endregion*/
