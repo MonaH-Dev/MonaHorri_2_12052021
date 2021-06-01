@@ -99,7 +99,7 @@ li  /* ajouter espaces dans la liste */
     color: #0065FC;
 }
 
-.navstart__item--inscription a/* "s'inscrire" soit tjrs en gras et bleu */
+.navstart__item--inscription a /* "s'inscrire" soit tjrs en gras et bleu */
 {
     color: #0065FC;
     font-weight: 800;
@@ -377,6 +377,7 @@ input[type=submit] /* format du bouton "rechercher" */
     justify-content: space-between;
     position: relative;
     height: 445px;
+    margin-bottom: 50px;
 }
 
 .activity-prev
@@ -438,41 +439,66 @@ input[type=submit] /* format du bouton "rechercher" */
 }
 
 
-/*
-.Activites img /* l'image de toutes les cards
-{
-    object-fit: cover; /* ajustement de l'image, rogner si besoin
-    width: 300px;
-    border-radius: 15px 15px 0px 0px;
-}
-
-.activity-prev__imgL /* l'image d'une card LARGE 
-{
-    height: 385px;
-}
-
-.activity-prev
-{
-    width: 300px;
-    border-radius: 15px 15px 15px 15px;
-    box-shadow: 0px 3px 3px 3px #f2f2f2;
-}
-
-.activity-prev__h3
-{
-font-size: medium;
-}
-
 */
 
 
 /*#endregion*/
 
 /* FOOTER */ /*#region*/
+
+footer
+{
+    /* background-color: #F2F2F2; */
+    background-color: pink;
+    margin: 20px 30px 0px 30px;
+}/* pq ça ne marche pas ???? */
+
+.navend
+{
+    background-color: #F2F2F2;
+    width: 1020px ;/* ça ne veut pas prendre tte la page ?! */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.a.propos .nos.hebergements .assistance
+{
+    width: 33%; /* ça ne veut pas prendre tte la page ?! */
+    margin-left: 30px;
+}
+
+.navendul
+{
+    list-style-type: none;
+    padding: 0;
+}
+
+.navend__item
+{
+    margin: 15px 0px;
+}
+
+.navend__item a /* enlever le sous-lignement du menu */
+{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+.navend__titles
+{
+    margin-block: 50px 10px;
+}
+
+/*
 footer
 {
     background-color: #F2F2F2;
 }
+
+.navend
+
 
 .a.propos .nos.hebergements .assistance
 {
@@ -491,9 +517,7 @@ footer
     list-style-type: none;
 }
 
-
-
-.navend__item a/* enlever le sous-lignement du menu */
+.navend__item a/* enlever le sous-lignement du menu
 {
     text-decoration: none;
     color: black;
@@ -504,5 +528,6 @@ footer
 {
     text-align: center;
 }
+*/
 
 /*#endregion*/
