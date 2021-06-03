@@ -232,6 +232,7 @@ input[type=submit] /* format du bouton "rechercher" */
     flex-wrap: wrap;
     justify-content: space-between;
     box-sizing: border-box;
+    column-gap: 30px;
 }
 
 .gridHebgt, .gridMostPop /* le bloc gris */
@@ -267,6 +268,12 @@ input[type=submit] /* format du bouton "rechercher" */
 {
     width: 100%;
     margin-bottom: 25px;
+}
+
+h3.gridHebgt__more 
+{
+    margin: 0 auto 100%;
+    width: 100%;
 }
 
 .hebgt-prev /* une card */
@@ -506,5 +513,108 @@ footer
 {
     margin-bottom: 20px;
 }
+
+/*#endregion*/
+
+
+/* MEDIA QUERIES breakpoint 1 : 1110-1340px */ /*#region*/
+@media screen and (min-width:1110px) and (max-width: 1340px)
+{
+    .gridHebgt
+    {
+        height: 825px;
+        justify-content: space-around;
+    }
+    .gridActivity
+    {
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows: repeat (5, 20%);
+        justify-content: space-around;
+    }
+    .gridActivity article:nth-child(5), .gridActivity article:nth-child(6)
+    {
+        grid-row: 3 / 4;
+        height: 100%;
+    }
+    .gridActivity article:nth-child(4)
+    {
+        grid-row: 2 / 4;
+    }
+    .gridActivity article:nth-child(3)
+    {
+        grid-row: 1 / 2;
+        height: 100%
+    }
+    .gridActivity article:nth-child(2)
+    {
+        grid-row: 1 / 3;
+        height: auto
+    }
+    .Activites
+    {
+        height: 835px;
+    }
+}
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
+@media screen and (min-width:885px) and (max-width: 1110px)
+{
+    .gridHebgt
+    {
+        height: 825px;
+        flex: 1;
+        justify-content: center;
+    }
+    .gridMostPop
+    {
+        flex: 1;
+    }
+    .LesHerbergements
+    {
+        flex-direction: column-reverse;
+    }
+    .hebgt-prev, .mostpop-prev
+    {
+        width: -webkit-fill-available;
+    }
+    .hebgt-prev__img
+    {
+        width: 100%;
+    }
+    .gridActivity
+    {
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows: repeat (5, 20%);
+    }
+    .gridActivity article:nth-child(5) 
+    {
+        grid-row: 3 / 4;
+        height: 98%;
+    }
+    .gridActivity article:nth-child(6) 
+    {
+        grid-row: 3 / 4;
+        height: 102%;
+        align-self: flex-end;
+    }
+    .Activites
+    {
+        height: 835px;
+    }
+    .navend
+    {
+
+    }
+}
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint 3 */ /*#region*/
+
+@media screen and (max-width: 885px)
+{
+    /* Rédigez vos propriétés CSS ici */
+}
+
 
 /*#endregion*/
