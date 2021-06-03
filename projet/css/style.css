@@ -16,7 +16,7 @@
 
 #main_wrapper /* fixer dimensions de la page et centre le site à l'écran */
 {
-    margin: 20px 30px 0px 30px;
+    margin: 0px 30px 0px 30px;
 }
 
 h1 {
@@ -178,6 +178,7 @@ input[type=submit] /* format du bouton "rechercher" */
     position: absolute; /* picto en avant - enfant */
     left: 0;
     top: 16px;
+    text-align: center
 }
 
 .filter__bloc
@@ -362,6 +363,7 @@ input[type=submit] /* format du bouton "rechercher" */
 {
     position: absolute;
     right: 40px;
+    top: 45px;
 }
 
 .mostpop-prev__star
@@ -404,17 +406,17 @@ input[type=submit] /* format du bouton "rechercher" */
     object-fit: cover; /* ajustement de l'image, rogner si besoin */
     width: 300px;
     height: 100%;
-    border-radius: 15px 15px 20px;
+    border-radius: 15px 15px 40px 40px;
 }
 
 .activity-prev__h3
 {
-    margin-top: -63px;
+    margin-top: -56px;
     background-color: white;
     position: absolute;
     width: 100%;
     font-size: medium;
-    padding: 20px;
+    padding: 17px;
     border-radius: 0px 0px 15px 15px;
     box-sizing: border-box;
 }
@@ -427,11 +429,15 @@ input[type=submit] /* format du bouton "rechercher" */
 .gridActivity article:nth-child(2) 
 {
     grid-row: 1 / 2;
+    height: 110%;
 }
 
 .gridActivity article:nth-child(3) 
 {
     grid-row: 2 / 3;
+    height: 90%;
+    grid-row-end: 3;
+    margin-block-start: auto;
 }
 
 .gridActivity article:nth-child(4) 
@@ -442,11 +448,14 @@ input[type=submit] /* format du bouton "rechercher" */
 .gridActivity article:nth-child(5) 
 {
     grid-row: 1 / 2;
+    height: 98%;
 }
 
 .gridActivity article:nth-child(6) 
 {
     grid-row: 2 / 3;
+    height: 102%;
+    align-self: flex-end;
 }
 
 /*#endregion*/
