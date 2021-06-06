@@ -168,17 +168,21 @@ input[type=submit] /* format du bouton "rechercher" */
     font-weight: 600;
 }
 
+.filter__cercle
+{
+    border-radius: 40px;
+    background-color: #DEEBFF;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
 .filters__picto
 {
-    width: 20px;
-    height: 20px;
-    border-radius: 40px; /*arrondir le picto */
-    background-color: #DEEBFF;
-    padding: 15px;
-    position: absolute; /* picto en avant - enfant */
-    left: 0;
-    top: 16px;
-    text-align: center
+
 }
 
 .filter__bloc
@@ -195,6 +199,7 @@ input[type=submit] /* format du bouton "rechercher" */
     padding-block: 14px;
     padding-inline-end: 30px;
     border-radius: 30px;
+    margin-left: -40px;
 }
 
 .info
@@ -253,7 +258,7 @@ input[type=submit] /* format du bouton "rechercher" */
 
 .gridHebgt
 {
-    max-width: 880px;
+    width: 880px;
     height: 625px;
     box-sizing: border-box;
     display: flex;
@@ -272,7 +277,6 @@ input[type=submit] /* format du bouton "rechercher" */
 
 h3.gridHebgt__more 
 {
-    margin: 0 auto 100%;
     width: 100%;
 }
 
@@ -331,6 +335,7 @@ h3.gridHebgt__more
 .gridMostPop__title
 {
     margin: 0px;
+    margin-bottom: 25px;
 }
 
 .mostpop-prev /* une prev */
@@ -382,6 +387,12 @@ h3.gridHebgt__more
 
 /* SECTION ACTIVITÉS A MARSEILLE */ /*#region*/
 
+.Activites
+{
+    height: 570px;
+    margin-top: 40px;
+}
+
 .gridActivity
 {
     box-sizing: border-box;
@@ -393,11 +404,6 @@ h3.gridHebgt__more
     justify-content: space-between;
     position: relative;
     height: 425px;
-}
-
-.Activites
-{
-    height: 570px;
 }
 
 .activity-prev
@@ -471,8 +477,8 @@ h3.gridHebgt__more
 footer
 {
     background-color: #F2F2F2;
-    margin-inline: -30px;
-    margin-block-end: -30px;
+    margin-inline: -40px;
+    margin-block-end: -40px;
 }
 
 .a.propos .nos.hebergements .assistance
@@ -487,7 +493,7 @@ footer
     justify-content: space-between;
     width: 1000px;
     padding-block: 25px;
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 .navendul
@@ -554,21 +560,36 @@ footer
     {
         height: 835px;
     }
+    .navend
+    {
+        justify-content: space-evenly;
+        padding-inline: 40px;
+        max-width: 100%;
+    }
 }
 /*#endregion*/
 
-/* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
-@media screen and (min-width:885px) and (max-width: 1110px)
+/* MEDIA QUERIES breakpoint 2 : 885-1110px and (min-width: 885px)*/ /*#region*/
+@media screen and (min-width: 885px) and (max-width: 1110px)
 {
+    #main_wrapper
+    {
+        margin: 0;
+    }
     .gridHebgt
     {
         height: 825px;
         flex: 1;
         justify-content: center;
+        background-color: white;
     }
     .gridMostPop
     {
-        flex: 1;
+        height: 600px;
+    }
+    .gridHebgt, .gridMostPop
+    {
+        width: auto;
     }
     .LesHerbergements
     {
@@ -578,42 +599,128 @@ footer
     {
         width: -webkit-fill-available;
     }
+    .mostpop-prev__prez
+    {
+        float: left;
+        padding-left: 25px;
+        margin-top: 10px;
+        max-width: 100%;
+    }
+    .mostpop-prev__img
+    {
+        width: 60%;
+    }
     .hebgt-prev__img
     {
         width: 100%;
     }
-    .gridActivity
-    {
-        grid-template-columns: 300px 300px 300px;
-        grid-template-rows: repeat (5, 20%);
-    }
-    .gridActivity article:nth-child(5) 
-    {
-        grid-row: 3 / 4;
-        height: 98%;
-    }
-    .gridActivity article:nth-child(6) 
-    {
-        grid-row: 3 / 4;
-        height: 102%;
-        align-self: flex-end;
-    }
     .Activites
     {
-        height: 835px;
+        height: 1350px;
     }
+    .gridActivity
+    {
+        display: flex;
+        flex-flow: column;
+        height: 200px;
+    }
+    .activity-prev
+    {
+        width: 100%;
+    }
+    .Activites img
+    {
+        width: -webkit-fill-available;
+        height: 170px;
+    }
+    .activity-prev__h3
+    {
+        margin-top: -52px;
+    }    
     .navend
     {
-
+        justify-content: space-evenly;
+        padding-inline: 40px;
     }
 }
 /*#endregion*/
 
-/* MEDIA QUERIES breakpoint 3 */ /*#region*/
-
-@media screen and (max-width: 885px)
+/* MEDIA QUERIES breakpoint 3 505-885px */ /*#region*/
+@media screen and (min-width:505px) and (max-width: 885px)
 {
-    /* Rédigez vos propriétés CSS ici */
+    #main_wrapper
+    {
+        margin: 0;
+    }
+    
+
+
+
+    .gridHebgt
+    {
+        height: 825px;
+        flex: 1;
+        justify-content: center;
+        background-color: white;
+    }
+    .gridMostPop
+    {
+        height: 600px;
+    }
+    .gridHebgt, .gridMostPop
+    {
+        width: auto;
+    }
+    .LesHerbergements
+    {
+        flex-direction: column-reverse;
+    }
+    .hebgt-prev, .mostpop-prev
+    {
+        width: -webkit-fill-available;
+    }
+    .mostpop-prev__prez
+    {
+        float: left;
+        padding-left: 20px;
+    }
+    .mostpop-prev__img
+    {
+        max-width: 60%;
+        width: max-content;
+    }
+    .hebgt-prev__img
+    {
+        width: 100%;
+    }
+    .Activites
+    {
+        height: 1350px;
+    }
+    .gridActivity
+    {
+        display: flex;
+        flex-flow: column;
+        height: 200px;
+    }
+    .activity-prev
+    {
+        width: 100%;
+    }
+    .Activites img
+    {
+        width: -webkit-fill-available;
+        height: 170px;
+    }
+    .activity-prev__h3
+    {
+        margin-top: -52px;
+    }    
+    .navend
+    {
+        justify-content: space-evenly;
+        padding-inline: 40px;
+    }
 }
 
 
