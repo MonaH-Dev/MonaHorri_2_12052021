@@ -29,8 +29,13 @@
             <section id="research">
                 <img class="markermap" src="../imgs/picto/marker.svg" alt="markermap" title="markermap"> </img>
                 <form method="post" action="traitement.php" class="form">
-                     <input type="research" name="city" placeholder="Marseille, France" maxlength="50"/> <!-- barre formulaire -->
-                     <input type="submit" value="Rechercher"/> <!-- bouton envoi du formulaire --> 
+                    <input type="research" name="city" placeholder="Marseille, France" maxlength="50"/> <!-- barre formulaire -->
+                    <!-- <input type="submit" value="Rechercher"/>  bouton envoi du formulaire -->
+                    <button type="submit"> <!-- bouton envoi du formulaire -->
+                        <p class="submit__txt">Rechercher</p>
+                        <i class="submit__picto whiteColor fas fa-search"> </i>
+                    </button>
+                    <!-- <input type="search" class="submit__picto whiteColor fas fa-search" value="fas fa-search" i/> bouton avec image --> 
                 </form> 
             </section><br>
 <!-- Filters -->               

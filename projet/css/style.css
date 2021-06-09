@@ -44,6 +44,9 @@ h3 {
 .grayColor{
     color: gray;
 }
+.whiteColor{
+    color: white;
+}
 /*#endregion*/
 
 /* HEADER */ /*#region*/
@@ -116,6 +119,10 @@ li  /* ajouter espaces dans la liste */
     align-items: stretch; /* NSP */
     height: 45px;
 }
+form.form
+{
+    -webkit-writing-mode: vertical-lr;
+}
 
 ::placeholder  /* format de la barre du formulaire */
 {
@@ -133,7 +140,7 @@ input[type=research] /* format de la barre de recherche */
     font-size: initial
 }
 
-input[type=submit] /* format du bouton "rechercher" */
+button[type=submit] /* format du bouton "rechercher" */
 {
     border-radius: 0px 10px 10px 0px; /* bordure arrondie à droite */
     border: none;
@@ -144,8 +151,12 @@ input[type=submit] /* format du bouton "rechercher" */
     padding-inline: 18px; 
     font-weight: 600;
     font-size: initial
+    margin-block: 0px;
 }
-
+i.submit__picto
+{
+    display: none;
+}
 .markermap /*pictogramme */
 {
     max-width:0.8em; /* rapetissir le pictogramme */
@@ -569,7 +580,7 @@ footer
 }
 /*#endregion*/
 
-/* MEDIA QUERIES breakpoint 2 : 885-1110px and (min-width: 885px)*/ /*#region*/
+/* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
 @media screen and (min-width: 885px) and (max-width: 1110px)
 {
     #main_wrapper
@@ -617,6 +628,7 @@ footer
     .Activites
     {
         height: 1350px;
+        margin-inline: 40px;
     }
     .gridActivity
     {
@@ -646,16 +658,21 @@ footer
 /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 3 505-885px */ /*#region*/
+
 @media screen and (min-width:505px) and (max-width: 885px)
 {
     #main_wrapper
     {
         margin: 0;
     }
-    
-
-
-
+    .submit__txt
+    {
+        display: none;
+    }
+    i.submit__picto
+    {
+        display: block;
+    }
     .gridHebgt
     {
         height: 825px;
@@ -696,6 +713,7 @@ footer
     .Activites
     {
         height: 1350px;
+        margin-inline: 40px;
     }
     .gridActivity
     {
@@ -722,6 +740,16 @@ footer
         padding-inline: 40px;
     }
 }
+
+/*#endregion*/
+
+
+/* MEDIA QUERIES Mobile : less than 505px */ /*#region*/
+@media screen and (max-width: 505px)
+{
+
+}
+
 
 
 /*#endregion*/
