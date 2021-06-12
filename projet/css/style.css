@@ -50,10 +50,16 @@ h3 {
 /*#endregion*/
 
 /* HEADER */ /*#region*/
-header /* tout aligner */
+
+header
 {
-    display: flex;
-    justify-content: space-between;
+    height: 65px;
+}
+
+.header__logo
+{
+    position: absolute;
+    /* OU float: left; Rapetissir le logo */
 }
 
 .header__logo img /* Rapetissir le logo */
@@ -62,6 +68,22 @@ header /* tout aligner */
 	height: auto;
     margin-top: 25px;
 }
+
+
+/* header /* tout aligner
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo img /* Rapetissir le logo 
+{
+    max-width:23%;
+	height: auto;
+    margin-top: 25px;
+} */
+
+
 /*#endregion*/
 
 /* MENU DE NAVIGATION */ /*#region*/
@@ -73,6 +95,7 @@ header /* tout aligner */
     display: flex;
     flex-wrap: wrap;
     padding-top: 5px;
+    float: right;
 }
 
 li  /* ajouter espaces dans la liste */
@@ -150,13 +173,20 @@ button[type=submit] /* format du bouton "rechercher" */
     margin-left: -7px; /* vient au dessus de la barre de recherche */
     padding-inline: 18px; 
     font-weight: 600;
-    font-size: initial
+    font-size: initial;
     margin-block: 0px;
 }
+
+p.submit__txt
+{    
+    margin: auto;
+}
+
 i.submit__picto
 {
     display: none;
 }
+
 .markermap /*pictogramme */
 {
     max-width:0.8em; /* rapetissir le pictogramme */
@@ -179,38 +209,37 @@ i.submit__picto
     font-weight: 600;
 }
 
+.filter__bloc
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid lightgrey;
+    border-radius: 40px;
+    border-left-style: none;
+}
+
 .filter__cercle
 {
     border-radius: 40px;
     background-color: #DEEBFF;
     width: 50px;
-    height: 50px;
+    height: 51px;
     margin: 0;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-
-.filters__picto
-{
-
-}
-
-.filter__bloc
-{
-    position: relative; /* parent pour picto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
 }
 
 #filters p
 {
-    border: 2px solid lightgrey;
     height: 100%;
     align-content: center;
-    text-indent: 60px;
-    padding-block: 14px;
-    padding-inline-end: 30px;
     border-radius: 30px;
-    margin-left: -40px;
+    padding: 14px;
+    margin: 0;
+    text-indent: 50px;
 }
 
 .info
@@ -351,7 +380,7 @@ h3.gridHebgt__more
 
 .mostpop-prev /* une prev */
 {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; 
     border-radius: 20px;
     padding: 5px;
     width: 345px;
@@ -667,7 +696,7 @@ footer
     }
 
 
-    
+
     .submit__txt
     {
         display: none;
@@ -730,14 +759,25 @@ footer
     }
     .Activites img
     {
-        width: -webkit-fill-available;
+        width: 100%;
         height: 170px;
     }
     .activity-prev__h3
     {
         margin-top: -52px;
-    }    
+    }
     .navend
+    {
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding-inline: 40px;
+    }
+    footer
+    {
+        margin: 0;
+    }
+
+   /* .navend
     {
         justify-content: space-evenly;
         padding-inline: 40px;
@@ -750,6 +790,11 @@ footer
 /* MEDIA QUERIES Mobile : less than 505px */ /*#region*/
 @media screen and (max-width: 505px)
 {
+    #main_wrapper
+    {
+        margin: 0;
+        padding: auto;
+    }
     .submit__txt
     {
         display: none;
@@ -758,8 +803,78 @@ footer
     {
         display: block;
     }
+    .gridMostPop
+    {
+    border-radius: 0px;
+    height: 600px;
+    }
+    .gridHebgt
+    {
+        height: 825px;
+        flex: 1;
+        justify-content: center;
+        background-color: white;
+    }
+
+
+
+    .gridHebgt, .gridMostPop
+    {
+        width: auto;
+    }
+    .LesHerbergements
+    {
+        flex-direction: column-reverse;
+    }
+    .hebgt-prev, .mostpop-prev
+    {
+        width: -webkit-fill-available;
+    }
+    .mostpop-prev__prez
+    {
+        float: left;
+        padding-left: 20px;
+    }
+
+    .hebgt-prev__img
+    {
+        width: 100%;
+    }
+    .Activites
+    {
+        height: 1350px;
+        margin-inline: 40px;
+    }
+    .gridActivity
+    {
+        display: flex;
+        flex-flow: column;
+        height: 200px;
+    }
+    .activity-prev
+    {
+        width: 100%;
+    }
+    .Activites img
+    {
+        width: 100%;
+        height: 170px;
+    }
+    .activity-prev__h3
+    {
+        margin-top: -52px;
+    }    
+    .navend
+    {
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding-inline: 40px;
+    }
+    footer
+    {
+        margin: 0;
+    }
+
+
 }
-
-
-
 /*#endregion*/
