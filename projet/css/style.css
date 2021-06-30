@@ -205,13 +205,12 @@ i.submit__picto
     padding-inline-end: 50px;
     flex-wrap: wrap;
     align-items: baseline;
-    width: 950px;
+    max-width: 950px;
     font-weight: 600;
 }
 
 .filter__bloc
 {
-    position: relative;
     display: flex;
     align-items: center;
     border: 2px solid lightgrey;
@@ -563,8 +562,18 @@ footer
 /*#endregion*/
 
 
+/* MEDIA QUERIES breakpoint : 1440px */ /*#region*/
+@media screen and (min-width:1440px)
+{
+    #main_wrapper
+    {
+        margin: auto;
+        width: fit-content;
+    }
+} /*#endregion*/
+
 /* MEDIA QUERIES breakpoint 1 : 1110-1340px */ /*#region*/
-@media screen and (min-width:1110px) and (max-width: 1340px)
+@media screen and (max-width: 1340px)
 {
     .gridHebgt
     {
@@ -610,15 +619,19 @@ footer
 /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
-@media screen and (min-width: 885px) and (max-width: 1110px)
+@media screen and (max-width: 1110px)
 {
+    body
+    {
+        margin: 0;
+    }
     #main_wrapper
     {
         margin: 0;
     }
+
     .gridHebgt
     {
-        height: 825px;
         flex: 1;
         justify-content: center;
         background-color: white;
@@ -626,6 +639,7 @@ footer
     .gridMostPop
     {
         height: 600px;
+        border-radius: 0px;
     }
     .gridHebgt, .gridMostPop
     {
@@ -678,9 +692,13 @@ footer
     {
         margin-top: -52px;
     }    
+    footer
+    {
+        margin: 0;
+    }
     .navend
     {
-        justify-content: space-evenly;
+        width: auto;
         padding-inline: 40px;
     }
 }
@@ -688,15 +706,8 @@ footer
 
 /* MEDIA QUERIES breakpoint 3 505-885px */ /*#region*/
 
-@media screen and (min-width:505px) and (max-width: 885px)
+@media screen and (max-width: 885px)
 {
-    #main_wrapper
-    {
-        margin: 0;
-    }
-
-
-
     .submit__txt
     {
         display: none;
@@ -708,173 +719,42 @@ footer
     .gridHebgt
     {
         height: 825px;
-        flex: 1;
-        justify-content: center;
-        background-color: white;
-    }
-    .gridMostPop
-    {
-        height: 600px;
-    }
-    .gridHebgt, .gridMostPop
-    {
-        width: auto;
-    }
-    .LesHerbergements
-    {
-        flex-direction: column-reverse;
-    }
-    .hebgt-prev, .mostpop-prev
-    {
-        width: -webkit-fill-available;
     }
     .mostpop-prev__prez
     {
-        float: left;
         padding-left: 20px;
     }
     .mostpop-prev__img
     {
-        max-width: 60%;
         width: max-content;
-    }
-    .hebgt-prev__img
-    {
-        width: 100%;
-    }
-    .Activites
-    {
-        height: 1350px;
-        margin-inline: 40px;
-    }
-    .gridActivity
-    {
-        display: flex;
-        flex-flow: column;
-        height: 200px;
-    }
-    .activity-prev
-    {
-        width: 100%;
     }
     .Activites img
     {
         width: 100%;
-        height: 170px;
-    }
-    .activity-prev__h3
-    {
-        margin-top: -52px;
     }
     .navend
     {
         justify-content: space-evenly;
         flex-direction: column;
-        padding-inline: 40px;
-    }
-    footer
-    {
-        margin: 0;
-    }
-
-   /* .navend
-    {
-        justify-content: space-evenly;
-        padding-inline: 40px;
     }
 }
 
 /*#endregion*/
-
 
 /* MEDIA QUERIES Mobile : less than 505px */ /*#region*/
 @media screen and (max-width: 505px)
 {
     #main_wrapper
     {
-        margin: 0;
         padding: auto;
     }
-    .submit__txt
-    {
-        display: none;
-    }
-    i.submit__picto
-    {
-        display: block;
-    }
-    .gridMostPop
-    {
-    border-radius: 0px;
-    height: 600px;
-    }
-    .gridHebgt
-    {
-        height: 825px;
-        flex: 1;
-        justify-content: center;
-        background-color: white;
-    }
-
-
-
-    .gridHebgt, .gridMostPop
-    {
-        width: auto;
-    }
-    .LesHerbergements
-    {
-        flex-direction: column-reverse;
-    }
-    .hebgt-prev, .mostpop-prev
-    {
-        width: -webkit-fill-available;
-    }
-    .mostpop-prev__prez
-    {
-        float: left;
-        padding-left: 20px;
-    }
-
-    .hebgt-prev__img
-    {
-        width: 100%;
-    }
-    .Activites
-    {
-        height: 1350px;
-        margin-inline: 40px;
-    }
-    .gridActivity
-    {
-        display: flex;
-        flex-flow: column;
-        height: 200px;
-    }
-    .activity-prev
-    {
-        width: 100%;
-    }
-    .Activites img
-    {
-        width: 100%;
-        height: 170px;
-    }
-    .activity-prev__h3
-    {
-        margin-top: -52px;
-    }    
     .navend
     {
         justify-content: space-evenly;
         flex-direction: column;
+        width: auto;
         padding-inline: 40px;
     }
-    footer
-    {
-        margin: 0;
-    }
-
 
 }
 /*#endregion*/
