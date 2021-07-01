@@ -47,6 +47,27 @@ h3 {
 .whiteColor{
     color: white;
 }
+
+/* animation liens & cards au survol */
+.linkAnimation {
+    transition: transform .2s;
+    text-decoration: none;
+    color: black;
+}
+
+.linkAnimation:hover {
+    transform: scale(1.02);
+}
+
+.linkAnimation2 {
+    transition: transform .2s;
+    text-decoration: none;
+    color: black;
+}
+
+.linkAnimation2:hover {
+    transform: scale(0.85);
+}
 /*#endregion*/
 
 /* HEADER */ /*#region*/
@@ -175,6 +196,7 @@ button[type=submit] /* format du bouton "rechercher" */
     font-weight: 600;
     font-size: initial;
     margin-block: 0px;
+    cursor: pointer;
 }
 
 p.submit__txt
@@ -185,6 +207,7 @@ p.submit__txt
 i.submit__picto
 {
     display: none;
+    cursor: pointer;
 }
 
 .markermap /*pictogramme */
@@ -277,6 +300,7 @@ i.submit__picto
     justify-content: space-between;
     box-sizing: border-box;
     column-gap: 30px;
+    margin-bottom: 40px;
 }
 
 .gridHebgt, .gridMostPop /* le bloc gris */
@@ -429,7 +453,6 @@ h3.gridHebgt__more
 .Activites
 {
     height: 570px;
-    margin-top: 40px;
 }
 
 .gridActivity
@@ -580,12 +603,6 @@ footer
         height: 825px;
         justify-content: space-around;
     }
-    .gridActivity
-    {
-        grid-template-columns: 300px 300px 300px;
-        grid-template-rows: repeat (5, 20%);
-        justify-content: space-around;
-    }
     .gridActivity article:nth-child(5), .gridActivity article:nth-child(6)
     {
         grid-row: 3 / 4;
@@ -621,15 +638,6 @@ footer
 /* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
 @media screen and (max-width: 1110px)
 {
-    body
-    {
-        margin: 0;
-    }
-    #main_wrapper
-    {
-        margin: 0;
-    }
-
     .gridHebgt
     {
         flex: 1;
@@ -644,10 +652,12 @@ footer
     .gridHebgt, .gridMostPop
     {
         width: auto;
+        margin-inline: -40px
     }
     .LesHerbergements
     {
         flex-direction: column-reverse;
+        margin-bottom: 0px;
     }
     .hebgt-prev, .mostpop-prev
     {
@@ -662,7 +672,7 @@ footer
     }
     .mostpop-prev__img
     {
-        width: 60%;
+        width: 50%;
     }
     .hebgt-prev__img
     {
@@ -671,7 +681,6 @@ footer
     .Activites
     {
         height: 1350px;
-        margin-inline: 40px;
     }
     .gridActivity
     {
@@ -694,7 +703,7 @@ footer
     }    
     footer
     {
-        margin: 0;
+        margin: -40px;
     }
     .navend
     {
@@ -704,7 +713,7 @@ footer
 }
 /*#endregion*/
 
-/* MEDIA QUERIES breakpoint 3 505-885px */ /*#region*/
+/* MEDIA QUERIES breakpoint 3 : 505-885px */ /*#region*/
 
 @media screen and (max-width: 885px)
 {
@@ -716,6 +725,10 @@ footer
     {
         display: block;
     }
+    #filters
+    {
+        gap: 15px;
+    }
     .gridHebgt
     {
         height: 825px;
@@ -723,10 +736,6 @@ footer
     .mostpop-prev__prez
     {
         padding-left: 20px;
-    }
-    .mostpop-prev__img
-    {
-        width: max-content;
     }
     .Activites img
     {
@@ -739,6 +748,16 @@ footer
     }
 }
 
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint 4 : 650px */ /*#region*/
+@media screen and (max-width: 650px)
+{
+    .mostpop-prev__img
+    {
+        width: 135px;
+    }
+}
 /*#endregion*/
 
 /* MEDIA QUERIES Mobile : less than 505px */ /*#region*/
@@ -756,5 +775,4 @@ footer
         padding-inline: 40px;
     }
 
-}
 /*#endregion*/
