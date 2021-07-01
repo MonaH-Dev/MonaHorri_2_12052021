@@ -638,6 +638,16 @@ footer
 /* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
 @media screen and (max-width: 1110px)
 {
+
+
+
+
+
+
+
+
+
+
     .gridHebgt
     {
         flex: 1;
@@ -667,8 +677,6 @@ footer
     {
         float: left;
         padding-left: 25px;
-        margin-top: 10px;
-        max-width: 100%;
     }
     .mostpop-prev__img
     {
@@ -759,6 +767,16 @@ footer
     }
 }
 /*#endregion*/
+
+/* MEDIA QUERIES breakpoint bis : 1110px à 505px */ /*#region*/
+@media screen and (min-width: 505px) and (max-width: 1110px)
+{
+    .mostpop-prev__prez
+    {
+        margin-top: 10px;
+        max-width: 100%;
+    }
+}
 
 /* MEDIA QUERIES Mobile : less than 505px */ /*#region*/
 @media screen and (max-width: 505px)
