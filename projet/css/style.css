@@ -777,6 +777,7 @@ footer
         max-width: 100%;
     }
 }
+/*#endregion*/
 
 /* MEDIA QUERIES Mobile : less than 505px */ /*#region*/
 @media screen and (max-width: 505px)
