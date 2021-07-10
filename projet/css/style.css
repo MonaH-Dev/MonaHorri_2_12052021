@@ -109,18 +109,20 @@ header
 
 /* MENU DE NAVIGATION */ /*#region*/
 
-.navstart ul /* enlever les puces, et mettre au format flexbox */
-{    
-    list-style-type: none;
-    text-decoration: none;
+.navstart
+{
+    align-self: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
     padding-top: 5px;
-    float: right;
 }
 
-li  /* ajouter espaces dans la liste */
-{ 
+.navstart__item
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
     margin-left: 60px;
 }
 
@@ -130,6 +132,7 @@ li  /* ajouter espaces dans la liste */
     color: black;
     font-weight: normal;
     font-size: small;
+    padding-top: 30px;
 }
 
 .navstart__item a:active /* met en bleu de lien actif et ajout bordure */
