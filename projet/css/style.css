@@ -591,7 +591,16 @@ footer
     #main_wrapper
     {
         margin: auto;
+<<<<<<< Updated upstream
         width: fit-content;
+=======
+        max-width: 1400px;
+    }
+    footer
+    {
+        margin-inline: 0;
+        margin-inline: 0;
+>>>>>>> Stashed changes
     }
 } /*#endregion*/
 
