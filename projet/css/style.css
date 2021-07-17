@@ -304,6 +304,7 @@ i.submit__picto
     box-sizing: border-box;
     column-gap: 30px;
     margin-bottom: 40px;
+    height: max-content;
 }
 
 .gridHebgt, .gridMostPop /* le bloc gris */
@@ -312,6 +313,7 @@ i.submit__picto
     border-radius: 20px;
     margin: 0;
     box-sizing: border-box;
+    height: auto;
 }
 
 .gridHebgt__title, .gridActivity__title
@@ -325,7 +327,6 @@ i.submit__picto
 .gridHebgt
 {
     width: 880px;
-    height: 625px;
     box-sizing: border-box;
     display: flex;
     flex: 2;
@@ -389,13 +390,13 @@ h3.gridHebgt__more
 .gridMostPop
 {
     width: 420px;
-    height: 625px;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
     padding: 40px 40px 34px 40px;
+    align-content: start;
 }
 
 .gridMostPop__title
@@ -414,6 +415,7 @@ h3.gridHebgt__more
     box-sizing: border-box;
     font-size: small;
     box-shadow: 0px 3px 3px 3px #ebebeb;
+    margin-block: 15px;
 }
 
 .mostpop-prev__img /* l'image d'une preview */
@@ -453,27 +455,21 @@ h3.gridHebgt__more
 
 /* SECTION ACTIVITÉS A MARSEILLE */ /*#region*/
 
-.Activites
-{
-    height: 570px;
-}
-
 .gridActivity
 {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-columns: 23% 23% 23% 23%;
     /* OU gris-template-colums: repeat (3, 300px); */
-    grid-template-rows: 50% 50%;
-    grid-gap: 40px;
+    grid-template-rows: 43% 43%;
+    grid-gap: 7% 2%;
     justify-content: space-between;
     position: relative;
-    height: 425px;
+    max-height: 500px;
 }
 
 .activity-prev
 {
-    width: 300px;
     border-radius: 15px 15px 15px 15px;
     box-shadow: 0px 3px 3px 3px #f2f2f2;
     position: relative;
@@ -482,7 +478,7 @@ h3.gridHebgt__more
 .Activites img /* l'image de toutes les cards */
 {
     object-fit: cover; /* ajustement de l'image, rogner si besoin */
-    width: 300px;
+    width: 100%;
     height: 100%;
     border-radius: 15px 15px 40px 40px;
 }
@@ -561,6 +557,10 @@ footer
     padding-left: 40px;
 }
 
+.navend div {
+    margin-right: 155px;
+}
+
 .navendul
 {
     list-style-type: none;
@@ -594,16 +594,19 @@ footer
     #main_wrapper
     {
         margin: auto;
-        width: fit-content;
+        max-width: 1400px;
+    }
+    footer
+    {
+        margin-inline: 0;
     }
 } /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 1 : 1110-1340px */ /*#region*/
-@media screen and (max-width: 1340px)
+/* @media screen and (max-width: 1340px)
 {
     .gridHebgt
     {
-        height: 825px;
         justify-content: space-around;
     }
     .gridActivity article:nth-child(5), .gridActivity article:nth-child(6)
@@ -635,22 +638,56 @@ footer
         padding-inline: 40px;
         max-width: 100%;
     }
-}
+} */
 /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
 @media screen and (max-width: 1110px)
 {
-
-
-
-
-
-
-
-
-
-
+    .header__logo img
+    {
+        margin-top: 0;
+    }
+    .navstart__item--inscription
+    {
+        position: absolute;
+        margin-top: 10px;
+    }
+    .navstart__item:not(.navstart__item--inscription)
+    {
+        color: blueviolet;
+        margin-top: 50px;
+        width: 100%;
+    }
+    .navstart__item
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .navstart__item a
+    {
+        padding-top: 0;
+        align-items: center;
+        padding-bottom: 5px;
+    }
+    .navstart__item:not(.navstart__item--inscription) a /* met en bleu de lien actif et ajout bordure */
+    {
+        border-bottom: 2px solid lightgrey;
+        width: 100%;
+    }
+    .navstart__link
+    {
+        padding-bottom: 60px;
+    }
+    .navstart__item a:hover /* agit sur le lien survolé */
+    {
+        font-weight: 600;
+        border-top: none;
+        padding-top: 0;
+        color: #0065FC;
+        border-bottom-color: #0065FC;
+    }
     .gridHebgt
     {
         flex: 1;
@@ -659,7 +696,6 @@ footer
     }
     .gridMostPop
     {
-        height: 600px;
         border-radius: 0px;
     }
     .gridHebgt, .gridMostPop
@@ -689,19 +725,20 @@ footer
     {
         width: 100%;
     }
-    .Activites
-    {
-        height: 1350px;
-    }
     .gridActivity
     {
         display: flex;
         flex-flow: column;
-        height: 200px;
+        max-height: none;
+    }
+    .gridActivity article:nth-child(3)
+    {
+        margin-block-start: unset;
     }
     .activity-prev
     {
         width: 100%;
+        margin-bottom: 30px;
     }
     .Activites img
     {
@@ -712,16 +749,17 @@ footer
     {
         margin-top: -52px;
     }    
-    footer
-    {
-        margin: -40px;
-    }
     .navend
     {
         width: auto;
         padding-inline: 40px;
     }
+    .navend div {
+        width: 100%;
+    }
 }
+
+
 /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 3 : 505-885px */ /*#region*/
@@ -739,10 +777,6 @@ footer
     #filters
     {
         gap: 15px;
-    }
-    .gridHebgt
-    {
-        height: 825px;
     }
     .mostpop-prev__prez
     {
@@ -782,63 +816,3 @@ footer
 }
 /*#endregion*/
 
-/* MEDIA QUERIES Mobile : less than 505px */ /*#region*/
-@media screen and (max-width: 505px)
-{
-    #main_wrapper
-    {
-        margin-inline: 10px;
-    }
-    .header__logo img
-    {
-        margin-top: 0;
-    }
-    .navstart__item--inscription
-    {
-        position: absolute;
-        margin-top: 10px;
-    }
-    .navstart__item:not(.navstart__item--inscription)
-    {
-        color: blueviolet;
-        margin-top: 50px;
-        width: 100%;
-    }
-    .navstart__item
-    {
-        margin-left: 0;
-        align-items: center;
-        text-align: center;
-    }
-    .navstart__item a
-    {
-        padding-top: 0;
-        align-items: center;
-        padding-bottom: 5px;
-    }
-    .navstart__item:not(.navstart__item--inscription) a /* met en bleu de lien actif et ajout bordure */
-    {
-        border-bottom: 2px solid lightgrey;
-        width: 120%;
-    }
-    .navstart__link
-    {
-        padding-bottom: 60px;
-    }
-    .navstart__item a:hover /* agit sur le lien survolé */
-    {
-        font-weight: 600;
-        border-top: none;
-        padding-top: 0;
-        color: #0065FC;
-        border-bottom-color: #0065FC;
-    }
-    .navend
-    {
-        justify-content: space-evenly;
-        flex-direction: column;
-        width: auto;
-        padding-inline: 40px;
-    }
-
-/*#endregion*/
