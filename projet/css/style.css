@@ -787,7 +787,51 @@ footer
 {
     #main_wrapper
     {
-        padding: auto;
+        margin-inline: 10px;
+    }
+    .header__logo img
+    {
+        margin-top: 0;
+    }
+    .navstart__item--inscription
+    {
+        position: absolute;
+        margin-top: 10px;
+    }
+    .navstart__item:not(.navstart__item--inscription)
+    {
+        color: blueviolet;
+        margin-top: 50px;
+        width: 100%;
+    }
+    .navstart__item
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .navstart__item a
+    {
+        padding-top: 0;
+        align-items: center;
+        padding-bottom: 5px;
+    }
+    .navstart__item:not(.navstart__item--inscription) a /* met en bleu de lien actif et ajout bordure */
+    {
+        border-bottom: 2px solid lightgrey;
+        width: 120%;
+    }
+    .navstart__link
+    {
+        padding-bottom: 60px;
+    }
+    .navstart__item a:hover /* agit sur le lien survolé */
+    {
+        font-weight: 600;
+        border-top: none;
+        padding-top: 0;
+        color: #0065FC;
+        border-bottom-color: #0065FC;
     }
     .navend
     {
