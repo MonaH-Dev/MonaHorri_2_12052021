@@ -636,17 +636,23 @@ footer
     .navstart__item:not(.navstart__item--inscription) a /* met en bleu de lien actif et ajout bordure */
     {
         border-bottom: 2px solid lightgrey;
-        width: 100%;
-        padding-inline: 40px;
+        width: -webkit-fill-available;
         border-block-start: 0;
     }
-    .navstart__link
+    .navstart__linkH
     {
-        padding-bottom: 60px;
+        margin-left: -40px;
+    }
+    .navstart__linkA
+    {
+        margin-right: -40px;
+    }
+    .navstart__item:not(.navstart__item--inscription) a:hover /* agit sur le lien survolé */
+    {
+        font-weight: 600;
     }
     .navstart__item a:hover /* agit sur le lien survolé */
     {
-        font-weight: 600;
         border-top: none;
         padding-top: 0;
         color: #0065FC;
