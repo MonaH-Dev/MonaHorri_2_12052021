@@ -72,11 +72,6 @@ h3 {
 
 /* HEADER */ /*#region*/
 
-header
-{
-    height: 65px;
-}
-
 .header__logo
 {
     position: absolute;
@@ -133,6 +128,7 @@ header
     font-weight: normal;
     font-size: small;
     padding-top: 30px;
+    border-block-start: 2px solid transparent;
 }
 
 .navstart__item a:active /* met en bleu de lien actif et ajout bordure */
@@ -143,12 +139,14 @@ header
 
 .navstart__item a:hover /* agit sur le lien survolé */
 {
-    font-weight: 600;
     border-top: 2px solid #0065FC;
     padding-top: 30px;
     color: #0065FC;
 }
-
+.navstart__item:not(.navstart__item--inscription) a:hover
+{
+    font-weight: 600;
+}
 .navstart__item--inscription a/* "s'inscrire" soit tjrs en gras et bleu */
 {
     color: #0065FC;
@@ -493,6 +491,10 @@ h3.gridHebgt__more
     padding: 17px;
     border-radius: 0px 0px 15px 15px;
     box-sizing: border-box;
+    /* ajout de petits points si txt trop longs : */
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .gridActivity article:nth-child(1) 
@@ -588,7 +590,7 @@ footer
 /*#endregion*/
 
 
-/* MEDIA QUERIES breakpoint : 1440px */ /*#region*/
+/* MEDIA QUERIES breakpoint 1 : 1440px */ /*#region*/
 @media screen and (min-width:1440px)
 {
     #main_wrapper
@@ -601,45 +603,6 @@ footer
         margin-inline: 0;
     }
 } /*#endregion*/
-
-/* MEDIA QUERIES breakpoint 1 : 1110-1340px */ /*#region*/
-/* @media screen and (max-width: 1340px)
-{
-    .gridHebgt
-    {
-        justify-content: space-around;
-    }
-    .gridActivity article:nth-child(5), .gridActivity article:nth-child(6)
-    {
-        grid-row: 3 / 4;
-        height: 100%;
-    }
-    .gridActivity article:nth-child(4)
-    {
-        grid-row: 2 / 4;
-    }
-    .gridActivity article:nth-child(3)
-    {
-        grid-row: 1 / 2;
-        height: 100%
-    }
-    .gridActivity article:nth-child(2)
-    {
-        grid-row: 1 / 3;
-        height: auto
-    }
-    .Activites
-    {
-        height: 835px;
-    }
-    .navend
-    {
-        justify-content: space-evenly;
-        padding-inline: 40px;
-        max-width: 100%;
-    }
-} */
-/*#endregion*/
 
 /* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
 @media screen and (max-width: 1110px)
@@ -655,8 +618,7 @@ footer
     }
     .navstart__item:not(.navstart__item--inscription)
     {
-        color: blueviolet;
-        margin-top: 50px;
+        margin-top: 60px;
         width: 100%;
     }
     .navstart__item
@@ -675,6 +637,8 @@ footer
     {
         border-bottom: 2px solid lightgrey;
         width: 100%;
+        padding-inline: 40px;
+        border-block-start: 0;
     }
     .navstart__link
     {
@@ -758,12 +722,9 @@ footer
         width: 100%;
     }
 }
-
-
 /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 3 : 505-885px */ /*#region*/
-
 @media screen and (max-width: 885px)
 {
     .submit__txt
@@ -792,7 +753,6 @@ footer
         flex-direction: column;
     }
 }
-
 /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 4 : 650px */ /*#region*/
@@ -801,6 +761,24 @@ footer
     .mostpop-prev__img
     {
         width: 135px;
+    }
+}
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint 5 : 385px */ /*#region*/
+@media screen and (max-width: 385px)
+{
+    #main_wrapper
+    {
+        margin: 0px 5px;
+    }
+    .mostpop-prev__prez
+    {
+        padding-left: 5px;
+    }
+    .mostpop-prev__img
+    {
+        width: 35%;
     }
 }
 /*#endregion*/
