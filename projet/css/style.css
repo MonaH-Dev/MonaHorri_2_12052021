@@ -144,6 +144,10 @@ h3 {
     height: 45px;
 }
 
+form.form
+{
+    -webkit-writing-mode: vertical-lr; /* alignmt barre & picto de recherche */
+}
 
 ::placeholder  /* format de la barre du formulaire */
 {
