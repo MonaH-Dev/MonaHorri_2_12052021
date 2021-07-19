@@ -571,7 +571,7 @@ footer
 
 
 /* MEDIA QUERIES breakpoint 1 : 1440px */ /*#region*/
-@media screen and (min-width:1440px)
+@media screen and (min-width:1441px)
 {
     #main_wrapper
     {
