@@ -1,12 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;800&display=swap');
-/* POUR IMPORTER POLICE TELECHARGEE
-@font-face {
-    font-family: 'RalewayRegular';
-    src: url('/fonts/RalewayRegular/raleway.woff2') format('woff2'),
-         url('/fonts/RalewayRegular/raleway.woff) format('woff');
-    font-weight: normal;
-    font-style: normal;
-} */
 
 /* MISE EN FORME GENERALE */ /*#region*/
 
@@ -48,7 +40,7 @@ h3 {
     color: white;
 }
 
-/* animation liens & cards au survol */
+/* animation filtres & cards au survol */
 .linkAnimation {
     transition: transform .2s;
     text-decoration: none;
@@ -72,11 +64,6 @@ h3 {
 
 /* HEADER */ /*#region*/
 
-header
-{
-    height: 65px;
-}
-
 .header__logo
 {
     position: absolute;
@@ -90,37 +77,24 @@ header
     margin-top: 25px;
 }
 
-
-/* header /* tout aligner
-{
-    display: flex;
-    justify-content: space-between;
-}
-
-.header__logo img /* Rapetissir le logo 
-{
-    max-width:23%;
-	height: auto;
-    margin-top: 25px;
-} */
-
-
 /*#endregion*/
 
 /* MENU DE NAVIGATION */ /*#region*/
 
-.navstart ul /* enlever les puces, et mettre au format flexbox */
-{    
-    list-style-type: none;
-    text-decoration: none;
+.navstart
+{
+    align-self: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
     padding-top: 5px;
-    float: right;
 }
 
-li  /* ajouter espaces dans la liste */
-{ 
+.navstart__item
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
     margin-left: 60px;
 }
 
@@ -130,6 +104,8 @@ li  /* ajouter espaces dans la liste */
     color: black;
     font-weight: normal;
     font-size: small;
+    padding-top: 30px;
+    border-block-start: 2px solid transparent;
 }
 
 .navstart__item a:active /* met en bleu de lien actif et ajout bordure */
@@ -140,10 +116,14 @@ li  /* ajouter espaces dans la liste */
 
 .navstart__item a:hover /* agit sur le lien survolé */
 {
-    font-weight: 600;
     border-top: 2px solid #0065FC;
     padding-top: 30px;
     color: #0065FC;
+}
+
+.navstart__item:not(.navstart__item--inscription) a:hover
+{
+    font-weight: 600;
 }
 
 .navstart__item--inscription a/* "s'inscrire" soit tjrs en gras et bleu */
@@ -159,14 +139,11 @@ li  /* ajouter espaces dans la liste */
 {
     display: flex;
     justify-content: flex-start; /* NSP */
-    flex-wrap: nowrap; /* NSP */
+    flex-wrap: nowrap;
     align-items: stretch; /* NSP */
     height: 45px;
 }
-form.form
-{
-    -webkit-writing-mode: vertical-lr;
-}
+
 
 ::placeholder  /* format de la barre du formulaire */
 {
@@ -178,7 +155,7 @@ input[type=research] /* format de la barre de recherche */
     border: 1px solid #F2F2F2;
     height: 100%;
     box-sizing: border-box; /* permet de rentrer la marge ds le calcul des dimensions */
-    text-indent: 15px; /* faire faire commencer le curseur plus loin */
+    text-indent: 15px; /* fait faire commencer le curseur plus loin */
     width: 230px;
     font-weight: 600;
     font-size: initial
@@ -301,6 +278,7 @@ i.submit__picto
     box-sizing: border-box;
     column-gap: 30px;
     margin-bottom: 40px;
+    height: max-content;
 }
 
 .gridHebgt, .gridMostPop /* le bloc gris */
@@ -309,6 +287,7 @@ i.submit__picto
     border-radius: 20px;
     margin: 0;
     box-sizing: border-box;
+    height: auto;
 }
 
 .gridHebgt__title, .gridActivity__title
@@ -322,7 +301,6 @@ i.submit__picto
 .gridHebgt
 {
     width: 880px;
-    height: 625px;
     box-sizing: border-box;
     display: flex;
     flex: 2;
@@ -386,13 +364,13 @@ h3.gridHebgt__more
 .gridMostPop
 {
     width: 420px;
-    height: 625px;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
     padding: 40px 40px 34px 40px;
+    align-content: start;
 }
 
 .gridMostPop__title
@@ -411,6 +389,7 @@ h3.gridHebgt__more
     box-sizing: border-box;
     font-size: small;
     box-shadow: 0px 3px 3px 3px #ebebeb;
+    margin-block: 15px;
 }
 
 .mostpop-prev__img /* l'image d'une preview */
@@ -450,27 +429,21 @@ h3.gridHebgt__more
 
 /* SECTION ACTIVITÉS A MARSEILLE */ /*#region*/
 
-.Activites
-{
-    height: 570px;
-}
-
 .gridActivity
 {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-columns: 23% 23% 23% 23%;
     /* OU gris-template-colums: repeat (3, 300px); */
-    grid-template-rows: 50% 50%;
-    grid-gap: 40px;
+    grid-template-rows: 43% 43%;
+    grid-gap: 7% 2%;
     justify-content: space-between;
     position: relative;
-    height: 425px;
+    max-height: 500px;
 }
 
 .activity-prev
 {
-    width: 300px;
     border-radius: 15px 15px 15px 15px;
     box-shadow: 0px 3px 3px 3px #f2f2f2;
     position: relative;
@@ -479,7 +452,7 @@ h3.gridHebgt__more
 .Activites img /* l'image de toutes les cards */
 {
     object-fit: cover; /* ajustement de l'image, rogner si besoin */
-    width: 300px;
+    width: 100%;
     height: 100%;
     border-radius: 15px 15px 40px 40px;
 }
@@ -494,6 +467,10 @@ h3.gridHebgt__more
     padding: 17px;
     border-radius: 0px 0px 15px 15px;
     box-sizing: border-box;
+    /* ajout de petits points si txt trop longs : */
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .gridActivity article:nth-child(1) 
@@ -558,6 +535,10 @@ footer
     padding-left: 40px;
 }
 
+.navend div {
+    margin-right: 155px;
+}
+
 .navendul
 {
     list-style-type: none;
@@ -585,78 +566,88 @@ footer
 /*#endregion*/
 
 
-/* MEDIA QUERIES breakpoint : 1440px */ /*#region*/
+/* MEDIA QUERIES breakpoint 1 : 1440px */ /*#region*/
 @media screen and (min-width:1440px)
 {
     #main_wrapper
     {
         margin: auto;
-<<<<<<< Updated upstream
-        width: fit-content;
-=======
         max-width: 1400px;
     }
     footer
     {
         margin-inline: 0;
-        margin-inline: 0;
->>>>>>> Stashed changes
     }
 } /*#endregion*/
-
-/* MEDIA QUERIES breakpoint 1 : 1110-1340px */ /*#region*/
-@media screen and (max-width: 1340px)
-{
-    .gridHebgt
-    {
-        height: 825px;
-        justify-content: space-around;
-    }
-    .gridActivity article:nth-child(5), .gridActivity article:nth-child(6)
-    {
-        grid-row: 3 / 4;
-        height: 100%;
-    }
-    .gridActivity article:nth-child(4)
-    {
-        grid-row: 2 / 4;
-    }
-    .gridActivity article:nth-child(3)
-    {
-        grid-row: 1 / 2;
-        height: 100%
-    }
-    .gridActivity article:nth-child(2)
-    {
-        grid-row: 1 / 3;
-        height: auto
-    }
-    .Activites
-    {
-        height: 835px;
-    }
-    .navend
-    {
-        justify-content: space-evenly;
-        padding-inline: 40px;
-        max-width: 100%;
-    }
-}
-/*#endregion*/
 
 /* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
 @media screen and (max-width: 1110px)
 {
-
-
-
-
-
-
-
-
-
-
+    .header__logo img
+    {
+        margin-top: 0;
+    }
+    .navstart__item--inscription
+    {
+        position: absolute;
+        margin-top: 10px;
+    }
+    .navstart__item:not(.navstart__item--inscription)
+    {
+        margin-top: 60px;
+        width: 100%;
+    }
+    .navstart__item
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .navstart__item a
+    {
+        padding-top: 0;
+        align-items: center;
+        padding-bottom: 5px;
+    }
+    .navstart__item:not(.navstart__item--inscription) a /* met en bleu de lien actif et ajout bordure */
+    {
+        border-bottom: 2px solid lightgrey;
+        width: -webkit-fill-available;
+        border-block-start: 0;
+    }
+    .navstart__linkH
+    {
+        margin-left: -40px;
+    }
+    .navstart__linkA
+    {
+        margin-right: -40px;
+    }
+    .navstart__item:not(.navstart__item--inscription) a:hover /* agit sur le lien survolé */
+    {
+        font-weight: 600;
+    }
+    .navstart__item a:hover /* agit sur le lien survolé */
+    {
+        border-top: none;
+        padding-top: 0;
+        color: #0065FC;
+        border-bottom-color: #0065FC;
+    }
+    .LesHerbergements
+    {
+        flex-direction: column-reverse;
+        margin-bottom: 0px;
+    }
+    .gridHebgt, .gridMostPop
+    {
+        width: auto;
+        margin-inline: -40px
+    }
+    .hebgt-prev, .mostpop-prev
+    {
+        width: -webkit-fill-available;
+    }
     .gridHebgt
     {
         flex: 1;
@@ -665,22 +656,7 @@ footer
     }
     .gridMostPop
     {
-        height: 600px;
         border-radius: 0px;
-    }
-    .gridHebgt, .gridMostPop
-    {
-        width: auto;
-        margin-inline: -40px
-    }
-    .LesHerbergements
-    {
-        flex-direction: column-reverse;
-        margin-bottom: 0px;
-    }
-    .hebgt-prev, .mostpop-prev
-    {
-        width: -webkit-fill-available;
     }
     .mostpop-prev__prez
     {
@@ -695,19 +671,20 @@ footer
     {
         width: 100%;
     }
-    .Activites
-    {
-        height: 1350px;
-    }
     .gridActivity
     {
         display: flex;
         flex-flow: column;
-        height: 200px;
+        max-height: none;
+    }
+    .gridActivity article:nth-child(3)
+    {
+        margin-block-start: unset;
     }
     .activity-prev
     {
         width: 100%;
+        margin-bottom: 30px;
     }
     .Activites img
     {
@@ -718,20 +695,18 @@ footer
     {
         margin-top: -52px;
     }    
-    footer
-    {
-        margin: -40px;
-    }
     .navend
     {
         width: auto;
         padding-inline: 40px;
     }
+    .navend div {
+        width: 100%;
+    }
 }
 /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 3 : 505-885px */ /*#region*/
-
 @media screen and (max-width: 885px)
 {
     .submit__txt
@@ -745,10 +720,6 @@ footer
     #filters
     {
         gap: 15px;
-    }
-    .gridHebgt
-    {
-        height: 825px;
     }
     .mostpop-prev__prez
     {
@@ -764,7 +735,6 @@ footer
         flex-direction: column;
     }
 }
-
 /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 4 : 650px */ /*#region*/
@@ -773,6 +743,24 @@ footer
     .mostpop-prev__img
     {
         width: 135px;
+    }
+}
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint 5 : 385px */ /*#region*/
+@media screen and (max-width: 385px)
+{
+    #main_wrapper
+    {
+        margin: 0px 15px;
+    }
+    .mostpop-prev__prez
+    {
+        padding-left: 5px;
+    }
+    .mostpop-prev__img
+    {
+        width: 35%;
     }
 }
 /*#endregion*/
@@ -788,19 +776,3 @@ footer
 }
 /*#endregion*/
 
-/* MEDIA QUERIES Mobile : less than 505px */ /*#region*/
-@media screen and (max-width: 505px)
-{
-    #main_wrapper
-    {
-        padding: auto;
-    }
-    .navend
-    {
-        justify-content: space-evenly;
-        flex-direction: column;
-        width: auto;
-        padding-inline: 40px;
-    }
-
-/*#endregion*/
