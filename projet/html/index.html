@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <!-- permet d'uniformiser l'interface : -->
@@ -25,11 +25,11 @@
            <h1 class="h1principal">Trouver votre hébergement pour des vacances de rêves</h1>
            <p>En plein centre ville ou en pleine nature</p>
             <section id="research">
-                <img class="markermap" src="../imgs/picto/marker.svg" alt="markermap" title="markermap"> </img>
+                <img class="markermap" src="../imgs/picto/marker.svg" alt="markermap" title="markermap"></img>
                 <form method="post" action="traitement.php" class="form">
-                    <input type="research" name="city" placeholder="Marseille, France" maxlength="50"/> <!-- barre formulaire -->
+                    <input type="text" name="city" placeholder="Marseille, France" maxlength="50"/> <!-- barre formulaire -->
                     <button type="submit"> <!-- bouton envoi du formulaire -->
-                        <p class="submit__txt">Rechercher</p>
+                        <textarea> class="submit__txt">Rechercher</textarea>
                         <i class="submit__picto whiteColor fas fa-search"> </i>
                     </button>
                 </form> 
