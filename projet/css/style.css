@@ -1,0 +1,782 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;800&display=swap');
+
+/* MISE EN FORME GENERALE */ /*#region*/
+
+*{ /* prend toute la page */
+    font-family: 'Raleway';
+}
+
+#main_wrapper /* fixer dimensions de la page et centre le site à l'écran */
+{
+    margin: 0px 30px 0px 30px;
+}
+
+h1 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.h1principal {
+    line-height: 20px;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+/* pictogrammes */
+.blueColor{
+    color:#0065FC;
+}
+.grayColor{
+    color: gray;
+}
+.whiteColor{
+    color: white;
+}
+
+/* animation filtres & cards au survol */
+.linkAnimation {
+    transition: transform .2s;
+    text-decoration: none;
+    color: black;
+}
+
+.linkAnimation:hover {
+    transform: scale(1.02);
+}
+
+.linkAnimation2 {
+    transition: transform .2s;
+    text-decoration: none;
+    color: black;
+}
+
+.linkAnimation2:hover {
+    transform: scale(0.85);
+}
+/*#endregion*/
+
+/* HEADER */ /*#region*/
+
+.header__logo
+{
+    position: absolute;
+    /* OU float: left; Rapetissir le logo */
+}
+
+.header__logo img /* Rapetissir le logo */
+{
+    max-width:23%;
+	height: auto;
+    margin-top: 25px;
+}
+
+/*#endregion*/
+
+/* MENU DE NAVIGATION */ /*#region*/
+
+.navstart
+{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 5px;
+}
+
+.navstart__item
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: 60px;
+}
+
+.navstart__item a/* enlever le sous-lignement du menu */
+{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    font-size: small;
+    padding-top: 30px;
+    border-block-start: 2px solid transparent;
+}
+
+.navstart__item a:active /* met en bleu de lien actif et ajout bordure */
+{
+    color: #0065FC;
+    border-top: 2px solid #0065FC;
+}
+
+.navstart__item a:hover /* agit sur le lien survolé */
+{
+    border-top: 2px solid #0065FC;
+    padding-top: 30px;
+    color: #0065FC;
+}
+
+.navstart__item:not(.navstart__item--inscription) a:hover
+{
+    font-weight: 600;
+}
+
+.navstart__item--inscription a/* "s'inscrire" soit tjrs en gras et bleu */
+{
+    color: #0065FC;
+    font-weight: 800;
+}
+/*#endregion*/
+
+/* FORMULAIRE DE RECHERCHE DE LOCALISATION */ /*#region*/
+
+#research
+{
+    display: flex;
+    justify-content: flex-start; /* NSP */
+    flex-wrap: nowrap;
+    align-items: stretch; /* NSP */
+    height: 45px;
+}
+
+form.form
+{
+    -webkit-writing-mode: vertical-lr; /* alignmt barre & picto de recherche */
+}
+
+::placeholder  /* format de la barre du formulaire */
+{
+    color: lightgrey;
+}
+
+input[type=research] /* format de la barre de recherche */
+{
+    border: 1px solid #F2F2F2;
+    height: 100%;
+    box-sizing: border-box; /* permet de rentrer la marge ds le calcul des dimensions */
+    text-indent: 15px; /* fait faire commencer le curseur plus loin */
+    width: 230px;
+    font-weight: 600;
+    font-size: initial
+}
+
+button[type=submit] /* format du bouton "rechercher" */
+{
+    border-radius: 0px 10px 10px 0px; /* bordure arrondie à droite */
+    border: none;
+    background-color: #0065FC;
+    color: white;
+    height: 100%; /* prend toute la place possible */
+    margin-left: -7px; /* vient au dessus de la barre de recherche */
+    padding-inline: 18px; 
+    font-weight: 600;
+    font-size: initial;
+    margin-block: 0px;
+    cursor: pointer;
+}
+
+p.submit__txt
+{    
+    margin: auto;
+}
+
+i.submit__picto
+{
+    display: none;
+    cursor: pointer;
+}
+
+.markermap /*pictogramme */
+{
+    max-width:0.8em; /* rapetissir le pictogramme */
+    border-radius: 10px 0px 0px 10px; /* bords gauche arrondis */
+    background-color: #F2F2F2;
+    padding-inline: 18px; /* rajouter bordures internes D&G */
+} 
+/*#endregion*/
+
+/* FILTERS */ /*#region*/
+
+#filters
+{
+    display: flex;
+    justify-content: space-between;
+    padding-inline-end: 50px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    max-width: 950px;
+    font-weight: 600;
+}
+
+.filter__bloc
+{
+    display: flex;
+    align-items: center;
+    border: 2px solid lightgrey;
+    border-radius: 40px;
+    border-left-style: none;
+}
+
+.filter__cercle
+{
+    border-radius: 40px;
+    background-color: #DEEBFF;
+    width: 50px;
+    height: 51px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+#filters p
+{
+    height: 100%;
+    align-content: center;
+    border-radius: 30px;
+    padding: 14px;
+    margin: 0;
+    text-indent: 50px;
+}
+
+.info
+{
+    position: relative;
+    display: table;
+    box-sizing: border-box;
+    height: 22px;
+    margin-block: 15px;
+}
+
+.info__picto
+{
+    width: 12px;
+    border-radius: 40px;
+    border: 1px solid grey;
+    padding: 4px;
+    color: #0065FC;
+    text-align: center;
+}
+
+.info__txt
+{
+    padding-left: 15px;
+    display: table-cell;
+    vertical-align: middle;
+}
+/*#endregion*/
+
+/* PARTIE HÉBERGEMENT- caractériques générales */ /*#region*/
+
+.LesHerbergements 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    column-gap: 30px;
+    margin-bottom: 40px;
+    height: max-content;
+}
+
+.gridHebgt, .gridMostPop /* le bloc gris */
+{
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.gridHebgt__title, .gridActivity__title
+{
+    margin-top: 0;
+}
+/*#endregion*/
+
+/* SECTION HÉBERGEMENTS */ /*#region*/
+
+.gridHebgt
+{
+    width: 880px;
+    box-sizing: border-box;
+    display: flex;
+    flex: 2;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    margin: 0;
+}
+
+.gridHebgt__title
+{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+h3.gridHebgt__more 
+{
+    width: 100%;
+}
+
+.hebgt-prev /* une card */
+{
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 5px;
+    width: 245px;
+    height: 200px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    font-size: small;
+    box-shadow: 0px 3px 3px 3px #ebebeb;
+}
+
+.hebgt-prev__img /* l'image d'une card */
+{
+    object-fit: cover; /* ajustement de l'image, rogner si besoin */
+    width: 236px;
+    height: 115px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.hebgt-prev__prez
+{
+    padding-left: 15px;
+}
+
+.hebgt-prev__h3 
+{
+    margin-block: 5px;
+}
+
+.hebgt-prev__star
+{
+    padding-top: 8px;
+}
+
+/*#endregion*/
+
+/* SECTION LES PLUS POPULAIRES */ /*#region*/
+
+.gridMostPop
+{
+    width: 420px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    padding: 40px 40px 34px 40px;
+    align-content: start;
+}
+
+.gridMostPop__title
+{
+    margin: 0px;
+    margin-bottom: 25px;
+}
+
+.mostpop-prev /* une prev */
+{
+    background-color: #FFFFFF; 
+    border-radius: 20px;
+    padding: 5px;
+    width: 345px;
+    height: 141px;
+    box-sizing: border-box;
+    font-size: small;
+    box-shadow: 0px 3px 3px 3px #ebebeb;
+    margin-block: 15px;
+}
+
+.mostpop-prev__img /* l'image d'une preview */
+{
+    object-fit: cover; /* ajustement de l'image, rogner si besoin */
+    width: 135px;
+    height: 132px;
+    border-radius: 15px 0px 0px 15px;
+    float: left;
+}
+
+.mostpop-prev__prez
+{
+    padding-left: 155px;
+    max-width: 140px;
+}
+
+.mostpop-prev__h3 
+{
+    margin-block: 5px;
+    width: 100%px;
+}
+
+.fa-chart-line /* picto graph */
+{
+    position: absolute;
+    right: 40px;
+    top: 45px;
+}
+
+.mostpop-prev__star
+{
+    padding-top: 50px;
+}
+
+/*#endregion*/
+
+/* SECTION ACTIVITÉS A MARSEILLE */ /*#region*/
+
+.gridActivity
+{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    /* OU gris-template-colums: repeat (3, 300px); */
+    grid-template-rows: 43% 43%;
+    grid-gap: 7% 2%;
+    justify-content: space-between;
+    position: relative;
+    max-height: 500px;
+}
+
+.activity-prev
+{
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 3px 3px 3px #f2f2f2;
+    position: relative;
+}
+
+.Activites img /* l'image de toutes les cards */
+{
+    object-fit: cover; /* ajustement de l'image, rogner si besoin */
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 40px 40px;
+}
+
+.activity-prev__h3
+{
+    margin-top: -56px;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    font-size: medium;
+    padding: 17px;
+    border-radius: 0px 0px 15px 15px;
+    box-sizing: border-box;
+    /* ajout de petits points si txt trop longs : */
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gridActivity article:nth-child(1) 
+{
+    grid-row: 1 / 3;
+}
+
+.gridActivity article:nth-child(2) 
+{
+    grid-row: 1 / 2;
+    height: 110%;
+}
+
+.gridActivity article:nth-child(3) 
+{
+    grid-row: 2 / 3;
+    height: 90%;
+    grid-row-end: 3;
+    margin-block-start: auto;
+}
+
+.gridActivity article:nth-child(4) 
+{
+    grid-row: 1 / 3;
+}
+
+.gridActivity article:nth-child(5) 
+{
+    grid-row: 1 / 2;
+    height: 98%;
+}
+
+.gridActivity article:nth-child(6) 
+{
+    grid-row: 2 / 3;
+    height: 102%;
+    align-self: flex-end;
+}
+
+/*#endregion*/
+
+/* FOOTER */ /*#region*/
+footer
+{
+    background-color: #F2F2F2;
+    margin-inline: -40px;
+    margin-block-end: -40px;
+}
+
+.a.propos .nos.hebergements .assistance
+{
+    text-align: left;
+}
+
+.navend 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1000px;
+    padding-block: 25px;
+    padding-left: 40px;
+}
+
+.navend div {
+    margin-right: 155px;
+}
+
+.navendul
+{
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.navend__item
+{
+    margin: 15px 0px;
+}
+
+.navend__item a/* enlever le sous-lignement du menu */
+{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+.navend__titles
+{
+    margin-bottom: 20px;
+}
+
+/*#endregion*/
+
+
+/* MEDIA QUERIES breakpoint 1 : 1440px */ /*#region*/
+@media screen and (min-width:1441px)
+{
+    #main_wrapper
+    {
+        margin: auto;
+        max-width: 1400px;
+    }
+    footer
+    {
+        margin-inline: 0;
+    }
+} /*#endregion*/
+
+/* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
+@media screen and (max-width: 1110px)
+{
+    .header__logo img
+    {
+        margin-top: 0;
+    }
+    .navstart__item--inscription
+    {
+        position: absolute;
+        margin-top: 10px;
+    }
+    .navstart__item:not(.navstart__item--inscription)
+    {
+        margin-top: 60px;
+        width: 100%;
+    }
+    .navstart__item
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .navstart__item a
+    {
+        padding-top: 0;
+        align-items: center;
+        padding-bottom: 5px;
+    }
+    .navstart__item:not(.navstart__item--inscription) a /* met en bleu de lien actif et ajout bordure */
+    {
+        border-bottom: 2px solid lightgrey;
+        width: -webkit-fill-available;
+        border-block-start: 0;
+    }
+    .navstart__linkH
+    {
+        margin-left: -40px;
+    }
+    .navstart__linkA
+    {
+        margin-right: -40px;
+    }
+    .navstart__item:not(.navstart__item--inscription) a:hover /* agit sur le lien survolé */
+    {
+        font-weight: 600;
+    }
+    .navstart__item a:hover /* agit sur le lien survolé */
+    {
+        border-top: none;
+        padding-top: 0;
+        color: #0065FC;
+        border-bottom-color: #0065FC;
+    }
+    .LesHerbergements
+    {
+        flex-direction: column-reverse;
+        margin-bottom: 0px;
+    }
+    .gridHebgt, .gridMostPop
+    {
+        width: auto;
+        margin-inline: -40px
+    }
+    .hebgt-prev, .mostpop-prev
+    {
+        width: -webkit-fill-available;
+    }
+    .gridHebgt
+    {
+        flex: 1;
+        justify-content: center;
+        background-color: white;
+    }
+    .gridMostPop
+    {
+        border-radius: 0px;
+    }
+    .mostpop-prev__prez
+    {
+        float: left;
+        padding-left: 25px;
+    }
+    .mostpop-prev__img
+    {
+        width: 50%;
+    }
+    .hebgt-prev__img
+    {
+        width: 100%;
+    }
+    .gridActivity
+    {
+        display: flex;
+        flex-flow: column;
+        max-height: none;
+    }
+    .gridActivity article:nth-child(3)
+    {
+        margin-block-start: unset;
+    }
+    .activity-prev
+    {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .Activites img
+    {
+        width: -webkit-fill-available;
+        height: 170px;
+    }
+    .activity-prev__h3
+    {
+        margin-top: -52px;
+    }    
+    .navend
+    {
+        width: auto;
+        padding-inline: 40px;
+    }
+    .navend div {
+        width: 100%;
+    }
+}
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint 3 : 505-885px */ /*#region*/
+@media screen and (max-width: 885px)
+{
+    .submit__txt
+    {
+        display: none;
+    }
+    i.submit__picto
+    {
+        display: block;
+    }
+    #filters
+    {
+        gap: 15px;
+    }
+    .mostpop-prev__prez
+    {
+        padding-left: 20px;
+    }
+    .Activites img
+    {
+        width: 100%;
+    }
+    .navend
+    {
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+}
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint 4 : 650px */ /*#region*/
+@media screen and (max-width: 650px)
+{
+    .mostpop-prev__img
+    {
+        width: 135px;
+    }
+}
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint 5 : 385px */ /*#region*/
+@media screen and (max-width: 385px)
+{
+    #main_wrapper
+    {
+        margin: 0px 15px;
+    }
+    .mostpop-prev__prez
+    {
+        padding-left: 5px;
+    }
+    .mostpop-prev__img
+    {
+        width: 35%;
+    }
+}
+/*#endregion*/
+
+/* MEDIA QUERIES breakpoint bis : 1110px à 505px */ /*#region*/
+@media screen and (min-width: 505px) and (max-width: 1110px)
+{
+    .mostpop-prev__prez
+    {
+        margin-top: 10px;
+        max-width: 100%;
+    }
+}
+/*#endregion*/
+
