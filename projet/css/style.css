@@ -154,7 +154,7 @@ form.form
     color: lightgrey;
 }
 
-input[type=research] /* format de la barre de recherche */
+input[type=text] /* format de la barre de recherche */
 {
     border: 1px solid #F2F2F2;
     height: 100%;
