@@ -105,7 +105,7 @@ h3 {
     font-weight: normal;
     font-size: small;
     padding-top: 30px;
-    border-block-start: 2px solid transparent;
+    border-top: 2px solid transparent;
 }
 
 .navstart__item a:active /* met en bleu de lien actif et ajout bordure */
@@ -173,10 +173,10 @@ button[type=submit] /* format du bouton "rechercher" */
     color: white;
     height: 100%; /* prend toute la place possible */
     margin-left: -7px; /* vient au dessus de la barre de recherche */
-    padding-inline: 18px; 
+    padding: 0 18px; 
     font-weight: 600;
     font-size: initial;
-    margin-block: 0px;
+    margin: 0px;
     cursor: pointer;
 }
 
@@ -196,7 +196,7 @@ i.submit__picto
     max-width:0.8em; /* rapetissir le pictogramme */
     border-radius: 10px 0px 0px 10px; /* bords gauche arrondis */
     background-color: #F2F2F2;
-    padding-inline: 18px; /* rajouter bordures internes D&G */
+    padding: 0 18px; /* rajouter bordures internes D&G */
 } 
 /*#endregion*/
 
@@ -206,7 +206,7 @@ i.submit__picto
 {
     display: flex;
     justify-content: space-between;
-    padding-inline-end: 50px;
+    padding-right: 50px;
     flex-wrap: wrap;
     align-items: baseline;
     max-width: 950px;
@@ -251,7 +251,7 @@ i.submit__picto
     display: table;
     box-sizing: border-box;
     height: 22px;
-    margin-block: 15px;
+    margin: 15px 0;
 }
 
 .info__picto
@@ -353,7 +353,7 @@ h3.gridHebgt__more
 
 .hebgt-prev__h3 
 {
-    margin-block: 5px;
+    margin: 5px 0;
 }
 
 .hebgt-prev__star
@@ -393,7 +393,7 @@ h3.gridHebgt__more
     box-sizing: border-box;
     font-size: small;
     box-shadow: 0px 3px 3px 3px #ebebeb;
-    margin-block: 15px;
+    margin: 15px 0;
 }
 
 .mostpop-prev__img /* l'image d'une preview */
@@ -413,7 +413,7 @@ h3.gridHebgt__more
 
 .mostpop-prev__h3 
 {
-    margin-block: 5px;
+    margin: 5px 0;
     width: 100%;
 }
 
@@ -493,7 +493,7 @@ h3.gridHebgt__more
     grid-row: 2 / 3;
     height: 90%;
     grid-row-end: 3;
-    margin-block-start: auto;
+    margin-top: auto;
 }
 
 .gridActivity article:nth-child(4) 
@@ -520,8 +520,8 @@ h3.gridHebgt__more
 footer
 {
     background-color: #F2F2F2;
-    margin-inline: -40px;
-    margin-block-end: -40px;
+    margin: 0 -40px;
+    margin-bottom: -40px;
 }
 
 .a.propos .nos.hebergements .assistance
@@ -535,7 +535,7 @@ footer
     flex-wrap: wrap;
     justify-content: space-between;
     width: 1000px;
-    padding-block: 25px;
+    padding: 25px 0;
     padding-left: 40px;
 }
 
@@ -578,10 +578,6 @@ footer
         margin: auto;
         max-width: 1400px;
     }
-    footer
-    {
-        margin-inline: 0;
-    }
 } /*#endregion*/
 
 /* MEDIA QUERIES breakpoint 2 : 885-1110px */ /*#region*/
@@ -617,7 +613,7 @@ footer
     {
         border-bottom: 2px solid lightgrey;
         width: -webkit-fill-available;
-        border-block-start: 0;
+        border-top: 0;
     }
     .navstart__linkH
     {
@@ -646,7 +642,7 @@ footer
     .gridHebgt, .gridMostPop
     {
         width: auto;
-        margin-inline: -40px
+        margin: 0 -40px
     }
     .hebgt-prev, .mostpop-prev
     {
@@ -683,7 +679,7 @@ footer
     }
     .gridActivity article:nth-child(3)
     {
-        margin-block-start: unset;
+        margin-top: unset;
     }
     .activity-prev
     {
@@ -702,7 +698,7 @@ footer
     .navend
     {
         width: auto;
-        padding-inline: 40px;
+        padding: 0 40px;
     }
     .navend div {
         width: 100%;
