@@ -64,6 +64,7 @@ h3 {
 .linkAnimation2:hover {
     transform: scale(0.85);
 }
+
 /*#endregion*/
 
 /* HEADER */ /*#region*/
@@ -446,7 +447,7 @@ h3.gridHebgt__more
     grid-gap: 7% 2%;
     justify-content: space-between;
     position: relative;
-    max-height: 500px;
+    height: 500px;
 }
 
 .activity-prev
@@ -459,25 +460,27 @@ h3.gridHebgt__more
 .Activites img /* l'image de toutes les cards */
 {
     object-fit: cover; /* ajustement de l'image, rogner si besoin */
-    width: 100%;
+    flex: 1 1 auto;
     height: 100%;
-    border-radius: 15px 15px 40px 40px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
 }
 
 .activity-prev__h3
 {
-    margin-top: -56px;
+    margin: unset;
+    /* ajout de petits points si txt trop longs : */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.activity-prev__title{
     background-color: white;
-    position: absolute;
     width: 100%;
     font-size: medium;
     padding: 17px;
     border-radius: 0px 0px 15px 15px;
     box-sizing: border-box;
-    /* ajout de petits points si txt trop longs : */
-    overflow: hidden; 
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .gridActivity article:nth-child(1) 
@@ -517,6 +520,13 @@ h3.gridHebgt__more
     align-self: flex-end;
 }
 
+.linkActivity {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+}
 /*#endregion*/
 
 /* FOOTER */ /*#region*/
@@ -678,7 +688,7 @@ footer
     {
         display: flex;
         flex-flow: column;
-        max-height: none;
+        height: unset;
     }
     .gridActivity article:nth-child(3)
     {
@@ -694,10 +704,6 @@ footer
         width: -webkit-fill-available;
         height: 170px;
     }
-    .activity-prev__h3
-    {
-        margin-top: -52px;
-    }    
     .navend
     {
         width: auto;
